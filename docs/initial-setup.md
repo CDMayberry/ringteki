@@ -16,7 +16,7 @@ git clone https://github.com/<your-username>/ringteki.git
 `
 
 ## Setup Project
-From here you need to run the commands per the readme under required software.
+From here you need to run the commands under [required software](https://github.com/gryffon/ringteki#required-software).
 
 Whenever you want to test a card yourself, you need to start the server, the gamenode, and have MongoDB running.
 ```
@@ -24,7 +24,7 @@ node .
 node server/gamenode
 ```
 ## Create Card Branch
-Now, when working on cards its best to have each card in it's own branch. The following only needs to be done when you first setup each branch.
+When working on cards its best to have each card in it's own branch. The following only needs to be done when you first setup each branch.
 ```
 // 1
 git checkout develop
