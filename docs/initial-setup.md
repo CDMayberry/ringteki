@@ -42,6 +42,6 @@ This does the following:
 
 We have a doc for implementing new cards: https://github.com/gryffon/ringteki/blob/master/docs/implementing-cards.md 
 
-In some cases a new card has similiar function to a pre-existing card. If so it's usually best to use that card as a basis for the new card. Always check for any cards similiar cards, it can speed up the process immensely.
+In some cases a new card has similiar function to a pre-existing card. If so it's usually best to use that card as a basis for the new card. Always check for any similiar cards, it can speed up the process immensely.
 
 That should have you setup and able to start writing code, I'll update this later when I have more time about commiting, pull-requests, etc.
