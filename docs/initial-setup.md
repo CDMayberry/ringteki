@@ -1,3 +1,5 @@
+This was branched from a card, delete and branch from develop.
+
 # New Developers Guide
 This guide is intended to help with the initial setup, specifically for developers not familiar with Git. You will need a Github account.
 
