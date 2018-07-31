@@ -1,6 +1,6 @@
-describe('Roving Michibiku', function() {
-    integration(function() {
-        describe('Roving Michibiku\'s ability', function() {
+describe('Roving Michibiku', function () {
+    integration(function () {
+        describe('Roving Michibiku\'s ability', function () {
             beforeEach(function () {
                 this.setupTest({
                     phase: 'conflict',
@@ -20,8 +20,7 @@ describe('Roving Michibiku', function() {
                 this.noMoreActions();
             });
 
-            // Trigger when in fight and won
-            it('should trigger when the roving michibiku wins a conflict as the attacker', function() {
+            it('should trigger when the roving michibiku wins a conflict as the attacker', function () {
                 this.initiateConflict({
                     type: 'military',
                     attackers: [this.roving],
@@ -31,8 +30,7 @@ describe('Roving Michibiku', function() {
                 expect(this.player1).toBeAbleToSelect(this.roving);
             });
 
-            // Trigger when in fight and won
-            it('should trigger when the roving michibiku wins a conflict as the defender', function() {
+            it('should trigger when the roving michibiku wins a conflict as the defender', function () {
                 this.player1.clickPrompt('Pass Conflict');
                 this.player1.clickPrompt('Yes');
                 this.noMoreActions();
@@ -46,8 +44,7 @@ describe('Roving Michibiku', function() {
                 expect(this.player1).toBeAbleToSelect(this.roving);
             });
 
-            // Not Trigger when in fight and lost
-            it('should not trigger when the roving michibiku loses a conflict', function() {
+            it('should not trigger when the roving michibiku loses a conflict', function () {
                 this.initiateConflict({
                     type: 'military',
                     attackers: [this.roving],
@@ -57,8 +54,7 @@ describe('Roving Michibiku', function() {
                 expect(this.player1).toHavePrompt('Action Window');
             });
 
-            // Not Trigger when out of fight and won
-            it('should not trigger when a conflict is won that roving michibiku is not present at', function() {
+            it('should not trigger when a conflict is won that roving michibiku is not present at', function () {
                 this.initiateConflict({
                     type: 'military',
                     attackers: [this.adept],
@@ -69,7 +65,7 @@ describe('Roving Michibiku', function() {
                 expect(this.player1).toHavePrompt('Action Window');
             });
 
-            describe('when it is triggered', function() {
+            describe('when it is triggered', function () {
                 beforeEach(function () {
                     this.initiateConflict({
                         type: 'military',
@@ -80,7 +76,7 @@ describe('Roving Michibiku', function() {
                     this.player1.clickCard(this.roving);
                 });
 
-                it('should take a ring from the opponent\'s claimed pool', function() {
+                it('should take a ring from the opponent\'s claimed pool', function () {
                     expect(this.player1).toHavePrompt('Choose a ring to take');
                     this.player1.clickRing('water');
                     expect(this.game.rings.water.claimedBy).toBe(this.player1.player.name);
@@ -88,14 +84,14 @@ describe('Roving Michibiku', function() {
                     expect(this.player1).toHavePrompt('Action Window');
                 });
 
-                it('should not be able to take from the unclaimed pool', function() {
+                it('should not be able to take from the unclaimed pool', function () {
                     expect(this.player1).toHavePrompt('Choose a ring to take');
                     this.player1.clickRing('earth');
                     expect(this.game.rings.earth.claimedBy).toBe('');
                     expect(this.player1).toHavePrompt('Choose a ring to take');
                 });
 
-                it('should not be able to take from the player\'s own claimed pool', function() {
+                it('should not be able to take from the player\'s own claimed pool', function () {
                     expect(this.player1).toHavePrompt('Choose a ring to take');
                     this.player1.clickRing('fire');
                     expect(this.player1).toHavePrompt('Choose a ring to take');
