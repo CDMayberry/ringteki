@@ -32,6 +32,14 @@ class Ring extends EffectSource {
         return this.game.getPlayers().some(player => check(player));
     }
 
+    isClaimed(player = null) {
+        let check = player => this.claimedBy === player.name;
+        if(player) {
+            return check(player);
+        }
+        return this.game.getPlayers().some(player => check(player));
+    }
+
     isConflictType(type) {
         return !this.isUnclaimed() && type === this.conflictType;
     }
